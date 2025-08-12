@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Quill & Ink</title>
+    <style>
+        :root {
+            --bg-color: #f9f5f0;
+            --text-color: #333;
+            --accent-color: #8b5a2b;
+            --light-accent: #d4b996;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4b996' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath fill='%23d4b996' fill-opacity='0.1' d='M100 0c-10 20-20 40-30 60-10-20-20-40-30-60 10 20 20 40 30 60-10-20-20-40-30-60 10 20 20 40 30 60-10-20-20-40-30-60 10 20 20 40 30 60-10-20-20-40-30-60 10 20 20 40 30 60-10-20-20-40-30-60 10 20 20 40 30 60-10-20-20-40-30-60 10 20 20 40 30 60-10-20-20-40-30-60 10 20 20 40 30 60z'/%3E%3C/svg%3E");
+        }
+        
+        header {
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 1px solid var(--light-accent);
+            margin-bottom: 3rem;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        
+        nav {
+            margin-top: 1rem;
+        }
+        
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--accent-color);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .about-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .about-title {
+            font-size: 2.2rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            object-fit: cover;
+            border: 3px solid var(--light-accent);
+            background-color: var(--light-accent);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'%3E%3Cpath fill='%238b5a2b' fill-opacity='0.2' d='M75 30c-20 0-40 10-40 30 0 20 20 30 40 30s40-10 40-30c0-20-20-30-40-30zm0 20c10 0 20 5 20 15s-10 15-20 15-20-5-20-15 10-15 20-15z'/%3E%3C/svg%3E");
+        }
+        
+        .about-content {
+            margin-bottom: 3rem;
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .interest-card {
+            background-color: rgba(212, 185, 150, 0.1);
+            padding: 1.5rem;
+            border-radius: 5px;
+            border-left: 3px solid var(--accent-color);
+        }
+        
+        .interest-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+        
+        .math {
+            font-style: italic;
+            background-color: rgba(139, 90, 43, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 3rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            border: 1px solid var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+        
+        .back-link:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: #777;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--light-accent);
+        }
+        
+        .animal-decoration {
+            position: fixed;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .fox {
+            top: 30%;
+            left: 10%;
+            transform: rotate(-10deg);
+        }
+        
+        .dna {
+            bottom: 20%;
+            right: 10%;
+            transform: rotate(5deg);
+        }
+        
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 2rem;
+            }
+            
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+            
+            .about-title {
+                font-size: 1.8rem;
+            }
+            
+            .interests-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animal decorations -->
+    <div class="animal-decoration fox">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 20c-15 0-30 10-30 25 0 15 15 25 30 25s30-10 30-25c0-15-15-25-30-25zm0 10c10 0 20 5 20 15s-10 15-20 15-20-5-20-15 10-15 20-15z" fill="#8b5a2b"/>
+            <path d="M30 45c-5 0-10 5-10 10s5 10 10 10 10-5 10-10-5-10-10-10zm40 0c-5 0-10 5-10 10s5 10 10 10 10-5 10-10-5-10-10-10z" fill="#8b5a2b"/>
+            <path d="M50 70c-5 0-10 5-10 10s5 10 10 10 10-5 10-10-5-10-10-10z" fill="#8b5a2b"/>
+            <path d="M60 30l10-10M40 30l-10-10" stroke="#8b5a2b" stroke-width="2"/>
+        </svg>
+    </div>
+    
+    <div class="animal-decoration dna">
+        <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <path d="M60 20c-10 0-20 5-20 15 0 10 10 15 20 15s20-5 20-15c0-10-10-15-20-15zm0 10c5 0 10 2.5 10 5s-5 5-10 5-10-2.5-10-5 5-5 10-5z" fill="#8b5a2b"/>
+            <path d="M40 50c-5 0-10 5-10 10s5 10 10 10 10-5 10-10-5-10-10-10zm40 0c-5 0-10 5-10 10s5 10 10 10 10-5 10-10-5-10-10-10z" fill="#8b5a2b"/>
+            <path d="M60 80c-10 0-20 5-20 15 0 10 10 15 20 15s20-5 20-15c0-10-10-15-20-15zm0 10c5 0 10 2.5 10 5s-5 5-10 5-10-2.5-10-5 5-5 10-5z" fill="#8b5a2b"/>
+            <path d="M40 35l-5 5 5 5M80 35l5 5-5 5M40 65l-5 5 5 5M80 65l5 5-5 5" stroke="#8b5a2b" stroke-width="2"/>
+        </svg>
+    </div>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Anshu's Headspace </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="archive.html">Archive</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="index.html" class="back-link">← Back to home</a>
+        
+        <div class="about-header">
+           <img src="WhatsApp Image 2025-07-03 at 17.09.17_d32ae7b1.JPG" alt="Anshu Mishra" class="profile-image">
+            <h1 class="about-title">About the Author</h1>
+        </div>
+        
+        <div class="about-content">
+            <p>Hi.</p>
+            
+            <p>I am Anshu Mishra, an undergraduate in mathematics at IISER Berhampur. I'm interested in Mathematical Biology and modeling more generally. I'm trying to get as much exposure as possible to these topics and closely related ones like Bioinformatics with AI and ML during my undergrad.</p>
+            
+            <p>I think, in the long term, I'd be interested in Theoretical ecology and/or mathematical oncology... though I'm not sure how that would look like yet.</p>
+            
+            
+            
+            <h2>Research Interests</h2>
+            <div class="interests-grid">
+                <div class="interest-card">
+                    <h3 class="interest-title">Mathematical Biology</h3>
+                    <p>Developing models that capture population dynamics, pattern formation, and other biological phenomena through equations like <span class="math">∂u/∂t = D∇²u + f(u)</span>.</p>
+                </div>
+                
+                <div class="interest-card">
+                    <h3 class="interest-title">Theoretical Ecology</h3>
+                    <p>Exploring species interactions through systems of equations and stability analysis, examining how <span class="math">dN/dt = rN(1-N/K)</span> scales to complex ecosystems. Specially it was Steven Strogatz's book which motivated me for this.</p>
+                </div>
+                
+                <div class="interest-card">
+                    <h3 class="interest-title">Mathematical Oncology</h3>
+                    <p>Very recentenly i got to know bout this area and i relly want to learn more bout it.
+                
+               
+            </div>
+            
+            <h2>Why This Blog?</h2>
+            <p>This space serves as my intellectual notebook, a place to work through ideas at the intersection of mathematics and biology. Writing helps me clarify my thoughts, and sharing them creates opportunities for feedback.</p>
+            
+            <p>I think the name "Anshu's Hedspace" justifies the content here lol :))</P>
+        
+        <a href="index.html" class="back-link">← Back to home</a>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Anshu's Headspce. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
