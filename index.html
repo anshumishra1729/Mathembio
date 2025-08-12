@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quill & Ink | Minimal Blog</title>
+    <style>
+        :root {
+            --bg-color: #f9f5f0;
+            --text-color: #333;
+            --accent-color: #8b5a2b;
+            --light-accent: #d4b996;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4b996' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath fill='%23d4b996' fill-opacity='0.1' d='M100 0c-10 20-20 40-30 60-10-20-20-40-30-60 10 20 20 40 30 60-10-20-20-40-30-60 10 20 20 40 30 60-10-20-20-40-30-60 10 20 20 40 30 60-10-20-20-40-30-60 10 20 20 40 30 60-10-20-20-40-30-60 10 20 20 40 30 60-10-20-20-40-30-60 10 20 20 40 30 60-10-20-20-40-30-60 10 20 20 40 30 60z'/%3E%3C/svg%3E");
+        }
+        
+        header {
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 1px solid var(--light-accent);
+            margin-bottom: 3rem;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        
+        nav {
+            margin-top: 1rem;
+        }
+        
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--accent-color);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--light-accent);
+        }
+        
+        .hero-title {
+            font-size: 2.2rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: #666;
+        }
+        
+        .post {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--light-accent);
+        }
+        
+        .post-title {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+        
+        .post-meta {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .post-excerpt {
+            margin-bottom: 1.5rem;
+        }
+        
+        .read-more {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            border: 1px solid var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+        
+        .read-more:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .newsletter {
+            background-color: rgba(212, 185, 150, 0.1);
+            padding: 2rem;
+            border-radius: 5px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .newsletter-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid var(--light-accent);
+            border-right: none;
+            border-radius: 3px 0 0 3px;
+            font-family: inherit;
+        }
+        
+        .newsletter-button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 0 3px 3px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .newsletter-button:hover {
+            background-color: #7a4d26;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: #777;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--light-accent);
+            margin-top: 3rem;
+        }
+        
+        .animal-decoration {
+            position: fixed;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .bird {
+            top: 20%;
+            left: 10%;
+            transform: rotate(-15deg);
+        }
+        
+        .cat {
+            bottom: 15%;
+            right: 10%;
+            transform: rotate(10deg);
+        }
+        
+        .math-decoration {
+            position: fixed;
+            opacity: 0.05;
+            z-index: -1;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+        
+        .equation-1 {
+            top: 30%;
+            right: 15%;
+            transform: rotate(5deg);
+        }
+        
+        .equation-2 {
+            bottom: 25%;
+            left: 15%;
+            transform: rotate(-5deg);
+        }
+        
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 2rem;
+            }
+            
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-input {
+                border-right: 1px solid var(--light-accent);
+                border-radius: 3px 3px 0 0;
+                margin-bottom: 0.5rem;
+            }
+            
+            .newsletter-button {
+                border-radius: 0 0 3px 3px;
+                padding: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animal decorations -->
+    <div class="animal-decoration bird">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 20c-10 0-20 10-20 20 0 10 10 20 20 20s20-10 20-20c0-10-10-20-20-20zm0 10c5 0 10 5 10 10s-5 10-10 10-10-5-10-10 5-10 10-10z" fill="#8b5a2b"/>
+            <path d="M30 40c-5 0-10 5-10 10s5 10 10 10 10-5 10-10-5-10-10-10zm40 0c-5 0-10 5-10 10s5 10 10 10 10-5 10-10-5-10-10-10z" fill="#8b5a2b"/>
+            <path d="M50 60c-5 0-10 5-10 10s5 10 10 10 10-5 10-10-5-10-10-10z" fill="#8b5a2b"/>
+        </svg>
+    </div>
+    
+    <div class="animal-decoration cat">
+        <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <path d="M60 30c-10 0-20 10-20 20 0 10 10 20 20 20s20-10 20-20c0-10-10-20-20-20zm0 10c5 0 10 5 10 10s-5 10-10 10-10-5-10-10 5-10 10-10z" fill="#8b5a2b"/>
+            <path d="M40 50c-5 0-10 5-10 10s5 10 10 10 10-5 10-10-5-10-10-10zm40 0c-5 0-10 5-10 10s5 10 10 10 10-5 10-10-5-10-10-10z" fill="#8b5a2b"/>
+            <path d="M60 70c-5 0-10 5-10 10s5 10 10 10 10-5 10-10-5-10-10-10z" fill="#8b5a2b"/>
+            <path d="M50 40l-10-10M70 40l10-10" stroke="#8b5a2b" stroke-width="2"/>
+        </svg>
+    </div>
+
+    <!-- Mathematical decorations -->
+    <div class="math-decoration equation-1">e<sup>iπ</sup> + 1 = 0</div>
+    <div class="math-decoration equation-2">F<sub>n</sub> = F<sub>n-1</sub> + F<sub>n-2</sub></div>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Anshu's Headspace</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="archive.html">Archive</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+       <h1 class="hero-title">Where Equations Meet Evolution</h1>
+            <p class="hero-subtitle">
+I am Anshu Mishra an undergrad in math at the IISER Berhampur.
+
+I’m interested in Mathematical Biology and modeling more generally. 
+</p>
+        </section>
+
+        <article class="post">
+            <h2 class="post-title">Mathematical Modeling: 101</h2>
+            <div class="post-meta">Published on May 31, 2025 · 5 min read</div>
+            <p class="post-excerpt">
+                What is mathematical modeling, how is it done, and how does it fit into the scientific method? How do the tools of mathematics and science together fit into the larger context of the humanities? </p>
+            <a href="post-minimalism-writing.html" class="read-more">Continue Reading</a>
+        </article>
+
+        <article class="post">
+            <h2 class="post-title">Biology : The Unfinished Symphony of Life</h2>
+            <div class="post-meta">Published on April 28, 2023 · 7 min read</div>
+            <p class="post-excerpt">
+                As promised in the last blog, this time trying to understand Biology!
+
+So, Biology is the study of living systems. Mathematical models can describe living systems at subcellular, cellular, tissue, organ, organ system, organism, population, community, and ecosystem levels of organization... </p>
+            <a href="post-nature-algorithms.html" class="read-more">Continue Reading</a>
+        </article>
+
+       
+
+        <section class="newsletter">
+            <h3 class="newsletter-title">Subscribe to Anshu's letters</h3>
+            <p>Receive occasional thoughts on evolution, nature, art and the poetry of mathematics.</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                <button type="submit" class="newsletter-button">Subscribe</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Anshu's Headspce. All rights reserved.</p>
+            <p>:))</p>
+        </div>
+    </footer>
+</body>
+</html>
