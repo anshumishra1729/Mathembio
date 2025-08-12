@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Beauty of Minimalism in Writing | Quill & Ink</title>
+    <style>
+        :root {
+            --bg-color: #f9f5f0;
+            --text-color: #333;
+            --accent-color: #8b5a2b;
+            --light-accent: #d4b996;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4b996' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath fill='%23d4b996' fill-opacity='0.1' d='M100 0c-10 20-20 40-30 60-10-20-20-40-30-60 10 20 20 40 30 60-10-20-20-40-30-60 10 20 20 40 30 60-10-20-20-40-30-60 10 20 20 40 30 60-10-20-20-40-30-60 10 20 20 40 30 60-10-20-20-40-30-60 10 20 20 40 30 60-10-20-20-40-30-60 10 20 20 40 30 60-10-20-20-40-30-60 10 20 20 40 30 60z'/%3E%3C/svg%3E");
+        }
+        
+        header {
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 1px solid var(--light-accent);
+            margin-bottom: 3rem;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        
+        nav {
+            margin-top: 1rem;
+        }
+        
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--accent-color);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .blog-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .blog-title {
+            font-size: 2.2rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+        
+        .blog-meta {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+        
+        .blog-content {
+            margin-bottom: 3rem;
+        }
+        
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .blog-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 2rem 0;
+            border-radius: 3px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .photo-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: -1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .math {
+            font-style: italic;
+            background-color: rgba(139, 90, 43, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+        
+        .quote {
+            border-left: 3px solid var(--light-accent);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: #555;
+            font-style: italic;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 3rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            border: 1px solid var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+        
+        .back-link:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: #777;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--light-accent);
+        }
+        
+        .animal-decoration {
+            position: fixed;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .bird {
+            top: 20%;
+            left: 10%;
+            transform: rotate(-15deg);
+        }
+        
+        .cat {
+            bottom: 15%;
+            right: 10%;
+            transform: rotate(10deg);
+        }
+        
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 2rem;
+            }
+            
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+            
+            .blog-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animal decorations -->
+    <div class="animal-decoration bird">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 20c-10 0-20 10-20 20 0 10 10 20 20 20s20-10 20-20c0-10-10-20-20-20zm0 10c5 0 10 5 10 10s-5 10-10 10-10-5-10-10 5-10 10-10z" fill="#8b5a2b"/>
+            <path d="M30 40c-5 0-10 5-10 10s5 10 10 10 10-5 10-10-5-10-10-10zm40 0c-5 0-10 5-10 10s5 10 10 10 10-5 10-10-5-10-10-10z" fill="#8b5a2b"/>
+            <path d="M50 60c-5 0-10 5-10 10s5 10 10 10 10-5 10-10-5-10-10-10z" fill="#8b5a2b"/>
+        </svg>
+    </div>
+    
+    <div class="animal-decoration cat">
+        <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <path d="M60 30c-10 0-20 10-20 20 0 10 10 20 20 20s20-10 20-20c0-10-10-20-20-20zm0 10c5 0 10 5 10 10s-5 10-10 10-10-5-10-10 5-10 10-10z" fill="#8b5a2b"/>
+            <path d="M40 50c-5 0-10 5-10 10s5 10 10 10 10-5 10-10-5-10-10-10zm40 0c-5 0-10 5-10 10s5 10 10 10 10-5 10-10-5-10-10-10z" fill="#8b5a2b"/>
+            <path d="M60 70c-5 0-10 5-10 10s5 10 10 10 10-5 10-10-5-10-10-10z" fill="#8b5a2b"/>
+            <path d="M50 40l-10-10M70 40l10-10" stroke="#8b5a2b" stroke-width="2"/>
+        </svg>
+    </div>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Anshu's Headspce</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="archive.html">Archive</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="index.html" class="back-link">← Back to all posts</a>
+        
+        <article>
+            <header class="blog-header">
+                <h1 class="blog-title">Mathematical Modeling: 101</h1>
+                <div class="blog-meta">Published on May 31, 2025 · 5 min read</div>
+            </header>
+            
+            
+                
+                <p>What is mathematical modeling, how is it done, and how does it fit into the scientific method? How do the tools of mathematics and science together fit into the larger context of the humanities?</p>
+
+<p>Mathematical models may be “proof-of-concept,” or quite realistic or somewhere in between. A proof-of-concept model is a toy model, not tied rigorously to data from a specific system, that incorporates a mechanism(s) of interest. The mechanism is mathematically probed and perturbed by the modeler in order to determine implications for the outcomes. Mathematical results from such a model analysis suggest hypotheses for the real-world system of interest. A realistic model, on the other hand, is tied rigorously to data from a particular system. Of course, even a realistic model has simplifications by design and is not as complicated as the original system. In general, the more realistic a mathematical model is, the less tractable it is. The “art of modeling” is the skill of finding that middle ground in which the model is tractable, but realistic enough to be informative. I strongly recommend you to read this particular paper.</p>
+   <P>With these general ideas in mind, let’s take a closer look at mathematical models,</P>             
+                <h2>THE MODELING CYCLE</h2>
+                <p>A mathematical model is an equation or system of equations that describes a physical or biological system. For example, the algebraic model</p>
+                <p>v(t) = −gt (1)</p>
+                <p>is an equation that describes the velocity of an object dropped from rest near the surface of a earth, where g > 0 is the acceleration due to gravity and t is time.</p>
+                <p>Since we are interested in change through time, models often take the form of differential equations. For example, the algebraic model (1) can be written as the differential equation model
+as</p> <p>ds/dt = -gt ---(2)</p><p>where s(t) is the distance traveled by the object. The differential equation model (2) is a continuous-time model.</p> <p>Some physical and biological processes are better described by discrete-time models, more like those of fibonacci sequence.</p>
+<p>Mathematical models are effective tools for addressing scientific problems. This is because a mathematical model is the translation of a scientific problem into the precise language of mathematics, where it becomes a bit easy to solve with mathematical tools.</p>
+<p>Following picture shows a conceptual diagram for the process of mathematical modeling. Each steps its own issues.</p>
+
+
+
+
+
+
+
+
+<img src="https://substackcdn.com/image/fetch/$s_!OzWq!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F385162a8-c85d-4faf-8274-cb2356c9562f_445x260.png">
+                <p class="photo-caption">From referencce 1</p>
+                
+                
+                
+                <h2>Step 1: Translation into Mathematics</h2>
+                <p>The first step in modeling is to translate the scientific problem into the precise language of mathematics. This process requires a crisp conceptual clarification and understanding. This step can roughly be understood as steps including Choosing Variables and Parameters, simplifying Assumptions, and Parameterization.</p>
+                <h3>Choosing Variables and Parameters</h3>
+                <p>We must decide what quantitative aspects of the system we wish to follow and name those quantities with variables. We must identify our dependent and independent variables In modeling, dependent variables often are called state variables, because they track the state of the system. For example, suppose we want to study how a population is distributed in time and space. We could take N(t,x) to be the density of organisms at time t at location x. Here, t and x are the independent variables and N is the state variable. In equation (2), the state variable is s and the independent variable is t. We know this because the presence of the derivative ds/dt tells us to the fact that s(t) is the function under consideration. Besides the independent variables, the system in question may depend on other extrinsic (environmental) factors that are relatively constant on the time scale of the problem, such quantities are called parameters.</p>
+                <h3>Simplifying Assumptions</h3>
+<p>Once the variables have been identified, they must be linked together with equations. Constructing model equations always involves making simplifying assumptions about the real system; for example, the object is close to the surface of the planet; the force of gravity at the surface of the planet is constant; gravity is the only force acting on the object (no friction). Mathematical models do not perfectly describe the “real world”; they are simplifications that capture the main mechanisms driving the observed patterns. A major goal of modeling and the art of modeling is to construct a simple, mechanistic, low-dimensional (few state variables) model that describes enough of the observed variability so that the leftover, “higher-order” variability is relatively small and can be described statistically as noise (random effects). We can add more and more mathematical complications (for example, the force due to friction on the falling object) to a model in an attempt to make it more realistic.</p>
+<p>On the other hand, if the assumptions oversimplify the problem, the mathematical model will not be able to approximate the real system. Thus it requires to learn the art of modelling</p>
+                <P>Parameterization</P>
+                <p>If model equations are to describe a real system, they must be connected to real data through parameterization. Parameterization is the statistical process by which data are used to estimate the values of the parameters. For example, in equation (1) the value of g can be estimated from experimental data on falling objects. We already have done this experiment in a our first year physics lab. Parameterization is also known as model fitting or parameter estimation. The word “estimation” in this context is a technical term from statistics that refers to the result of rigorous model fitting.</p>
+                <P>The parameterized model equation(s) may now be taken, tentatively, as a bridge for the real system. In fact, the model constitutes a hypothesis about the scientific problem. More than one model can be constructed, based on different hypotheses about what drives the system. These competing models serve as alternative hypotheses, which are then tested in Step 3.</P>
+                
+                
+                <h2>Step 2: Model Analysis</h2> <p>Time to get our tools up. The second step in modeling is mathematical analysis. All the powerful concepts and tools of mathematics may now be brought to bear on the scientific problem through its reincarnation, the model. The analysis may require solving differential equations, drawing bifurcation diagrams, linearizing, or utilizing any other tool.</p>
+                <h2>Step 3: Back-Translation</h2> <P>The third step is to translate the mathematical results back into the language of the original scientific problem. At this point, we must ask whether the results correspond to extant data, and whether the model can accurately predict new data. If not, then we will need to revise the model and “go around the loop again”</P>
+                <h2>Step 4: Revising Model Assumptions</h2> <p>The fourth step is ubiquitous in modeling. A model that doesn’t correspond to data must be revised. One or more of the assumptions were false or were oversimplifications; important factors may have been left out of the model. In practice, model revision occurs more or less continually throughout the modeling process as new insights are gained and equations are tweaked.</p>
+                <p>You can see that modeling in biology requires a thorough integration of biology, mathematics, and statistics. The next three blogs will contain some important general ideas and terms from each of these disciplines.</p>
+
+                
+                <p>Peace off, folks!</p>
+                <p>References:</p>
+                <p>Mathematical Models in Population Biology and Epidemiology, Fred Brauer Carlos Castillo-Chavez</p>
+                <p>Mathematical Modeling in Biology, Shandelle M. Henson and James L. Hayward</p>
+                <p>The Lost Art of Mathematical Modelling, Linn´ea Gyllingberga , Abeba Birhaneb , David J. T. Sumpterc</p>
+            
+            <a href="index.html" class="back-link">← Back to all posts</a>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Anshu's Headspce. All rights reserved.
+
+</p>
+            <p>:))</p>
+        </div>
+    </footer>
+</body>
+</html>
